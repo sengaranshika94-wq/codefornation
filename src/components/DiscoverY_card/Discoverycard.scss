@@ -1,0 +1,184 @@
+.discovery-card {
+  position: absolute;
+
+  width: 280px;
+
+  background: #f3e7d0;
+
+  border: 1px solid rgba(41, 37, 30, 0.18);
+
+  box-shadow:
+    0 20px 50px rgba(45, 35, 24, 0.18);
+
+  cursor: pointer;
+
+  z-index: 50;
+
+  overflow: hidden;
+
+  animation: cardReveal 0.35s ease forwards;
+
+  // =================================
+  // CARD ABOVE PIN
+  // =================================
+
+  &--top {
+    transform: translate(-50%, calc(-100% - 18px));
+  }
+
+  // =================================
+  // CARD TO RIGHT OF PIN
+  // =================================
+
+  &--right {
+    transform: translate(18px, -50%);
+  }
+
+  // =================================
+  // CARD TO LEFT OF PIN
+  // =================================
+
+  &--left {
+    transform: translate(calc(-100% - 18px), -50%);
+  }
+
+  // =================================
+  // IMAGE
+  // =================================
+
+  &__image {
+    width: 100%;
+    height: 150px;
+
+    overflow: hidden;
+
+    img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.6s
+        cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  &:hover {
+    .discovery-card__image img {
+      transform: scale(1.05);
+    }
+  }
+
+  // =================================
+  // CONTENT
+  // =================================
+
+  &__content {
+    padding: 18px 20px 20px;
+  }
+
+  // =================================
+  // META
+  // =================================
+
+  &__meta {
+    margin: 0 0 8px;
+
+    color: #91471f;
+
+    font-family:
+      Arial,
+      Helvetica,
+      sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+  }
+
+  // =================================
+  // TITLE
+  // =================================
+
+  &__title {
+    margin: 0 0 10px;
+
+    color: #29251e;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    line-height: 1.05;
+  }
+
+  // =================================
+  // EXCERPT
+  // =================================
+
+  &__excerpt {
+    margin: 0 0 18px;
+
+    color: #625746;
+
+    font-family:
+      Arial,
+      Helvetica,
+      sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+  }
+
+  // =================================
+  // LINK
+  // =================================
+
+  &__link {
+    color: #29251e;
+
+    font-family:
+      Arial,
+      Helvetica,
+      sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    transition: color 0.3s ease;
+  }
+
+  &:hover &__link {
+    color: #91471f;
+  }
+}
+
+
+// =================================
+// CARD REVEAL
+// =================================
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

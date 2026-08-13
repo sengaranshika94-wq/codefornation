@@ -1,0 +1,287 @@
+.explore {
+  position: relative;
+
+  min-height: 100vh;
+
+  color: #29251e;
+
+  overflow: hidden;
+
+  /* IMAGE IS THE MAIN BACKGROUND */
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(238, 226, 205, 0.18),
+      rgba(238, 226, 205, 0.25)
+    ),
+    url("../../assets/images/bg2.png");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+}
+
+
+/* =================================
+   SOFT LIGHT — VERY SUBTLE
+================================= */
+
+.explore::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 10%,
+      rgba(255, 250, 238, 0.28),
+      transparent 38%
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.explore__hero {
+  position: relative;
+
+  z-index: 1;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding:
+    145px
+    40px
+    70px;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+.explore__intro {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(650px, 100%);
+
+  text-align: center;
+}
+
+
+.explore__eyebrow {
+  margin: 0 0 20px;
+
+  color: #91471f;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.26em;
+}
+
+
+.explore__title {
+  margin: 0;
+
+  color: #29251e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(46px, 5.5vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.045em;
+}
+
+
+.explore__description {
+  max-width: 500px;
+
+  margin:
+    26px
+    auto
+    0;
+
+  color: #685d4e;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =================================
+   CATEGORY FILTER
+================================= */
+
+.explore .category-filter {
+  position: relative;
+
+  z-index: 6;
+
+  margin-top: 42px;
+}
+
+
+/* =================================
+   MAP
+================================= */
+
+.explore__map {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(920px, 100%);
+
+  min-height: 600px;
+
+  margin-top: 5px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =================================
+   SOFT LIGHT BEHIND MAP
+================================= */
+
+.explore__map::before {
+  content: "";
+
+  position: absolute;
+
+  width: 760px;
+  height: 560px;
+
+  top: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255, 250, 239, 0.30),
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =================================
+   MAP CONTENT
+================================= */
+
+.explore__map > * {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+  .explore {
+    background-attachment: scroll;
+  }
+
+  .explore__hero {
+    padding:
+      135px
+      28px
+      55px;
+  }
+
+  .explore__map {
+    min-height: 540px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .explore__hero {
+    padding:
+      120px
+      18px
+      40px;
+  }
+
+  .explore__title {
+    font-size: clamp(40px, 11vw, 58px);
+
+    line-height: 0.95;
+  }
+
+  .explore__description {
+    max-width: 390px;
+
+    margin-top: 22px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  .explore .category-filter {
+    width: 100%;
+
+    margin-top: 32px;
+  }
+
+  .explore__map {
+    min-height: 480px;
+  }
+
+  .explore__map::before {
+    width: 520px;
+    height: 420px;
+  }
+}

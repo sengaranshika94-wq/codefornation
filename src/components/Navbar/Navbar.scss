@@ -1,0 +1,233 @@
+.navbar {
+  position: absolute;
+
+  top: 24px;
+  left: 50%;
+
+  z-index: 100;
+
+  width: min(
+    1180px,
+    calc(100% - 80px)
+  );
+
+  height: 64px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 26px;
+
+  /* translucent parchment */
+
+  background: rgba(
+    231,
+    213,
+    179,
+    0.52
+  );
+
+  /* glass / blurry effect */
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  /* subtle border */
+
+  border: 1px solid
+    rgba(
+      41,
+      37,
+      30,
+      0.18
+    );
+
+  /* soft shadow */
+
+  box-shadow:
+    0 8px 30px
+    rgba(
+      45,
+      35,
+      24,
+      0.08
+    );
+
+  border-radius: 2px;
+}
+
+
+/* =================================
+   BRAND
+================================= */
+
+.navbar__brand {
+  color: #29251e;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.24em;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.navbar__brand:hover {
+  color: #91471f;
+}
+
+
+/* =================================
+   LINKS
+================================= */
+
+.navbar__links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 34px;
+}
+
+
+.navbar__link {
+  position: relative;
+
+  color: #4b4032;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.22em;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* underline animation */
+
+.navbar__link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #91471f;
+
+  transition:
+    width 0.35s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.navbar__link:hover {
+  color: #91471f;
+}
+
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    top: 18px;
+
+    width: calc(100% - 40px);
+
+    padding: 0 20px;
+  }
+
+  .navbar__links {
+    gap: 20px;
+  }
+
+  .navbar__brand {
+    font-size: 8px;
+
+    letter-spacing: 0.18em;
+  }
+
+  .navbar__link {
+    font-size: 8px;
+
+    letter-spacing: 0.16em;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    top: 14px;
+
+    width: calc(100% - 28px);
+
+    height: 56px;
+
+    padding: 0 16px;
+  }
+
+  .navbar__brand {
+    font-size: 7px;
+
+    letter-spacing: 0.14em;
+  }
+
+  .navbar__links {
+    gap: 12px;
+  }
+
+  .navbar__link {
+    font-size: 6px;
+
+    letter-spacing: 0.12em;
+  }
+}

@@ -1,0 +1,558 @@
+.hero {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  overflow: hidden;
+
+  background: #d8c39e;
+
+  color: #29251e;
+  // clip-path: inset(100% 0 0 0);
+  // will-change: transform, clip-path;
+}
+
+
+/* =================================
+   BACKGROUND IMAGE
+================================= */
+
+.hero__image {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    url("../../assets/images/bg.png");
+
+  background-size: cover;
+
+  background-position: center;
+
+  filter:
+    sepia(12%)
+    saturate(75%)
+    contrast(96%);
+
+  transform: scale(1.02);
+}
+
+
+/* =================================
+   PAPER / CINEMATIC TREATMENT
+================================= */
+
+.hero__texture {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(231, 213, 179, 0.96) 0%,
+      rgba(231, 213, 179, 0.88) 31%,
+      rgba(231, 213, 179, 0.38) 53%,
+      rgba(216, 195, 158, 0.08) 75%
+    );
+
+  mix-blend-mode: normal;
+}
+
+
+/* subtle paper grain */
+
+.hero__texture::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.16;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.18'/%3E%3C/svg%3E");
+
+  pointer-events: none;
+}
+
+
+
+
+/* =================================
+   HERO CONTENT
+================================= */
+
+.hero__content {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 50%;
+
+  left: 9%;
+
+  width: 55%;
+
+  transform: translateY(-43%);
+}
+
+
+/* =================================
+   EYEBROW
+================================= */
+
+.hero__eyebrow {
+  margin: 0 0 30px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.30em;
+
+  color: #91471f;
+
+  text-transform: uppercase;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.hero__title {
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight: 400;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.055em;
+}
+
+
+.hero__title span {
+  font-size: clamp(
+    75px,
+    10vw,
+    160px
+  );
+
+  color: #29251e;
+}
+
+
+.hero__title em {
+  margin-top: 18px;
+
+  margin-left: 8px;
+
+  font-size: clamp(
+    55px,
+    7vw,
+    105px
+  );
+
+  font-weight: 400;
+
+  color: #91471f;
+}
+
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.hero__description {
+  margin-top: 45px;
+
+  margin-left: 8px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+
+  line-height: 1.65;
+
+  color: #4b4032;
+}
+
+
+.hero__description p {
+  margin: 0;
+}
+
+
+.hero__question {
+  margin-top: 20px !important;
+
+  font-size: 23px;
+
+  color: #29251e;
+}
+
+
+.hero__question em {
+  color: #91471f;
+}
+
+
+/* =================================
+   BUTTON
+================================= */
+
+.hero__button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin-top: 30px;
+
+  padding: 17px 27px;
+
+  border: 1px solid
+    #5a4a36;
+
+  background: rgba(
+    231,
+    213,
+    179,
+    0.18
+  );
+
+  color: #29251e;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.22em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    gap 0.35s ease;
+}
+
+
+.hero__button:hover {
+  gap: 50px;
+
+  background: #29251e;
+
+  color: #e7d5b3;
+}
+
+
+.hero__button span:last-child {
+  font-size: 18px;
+
+  color: #91471f;
+}
+
+
+.hero__button:hover span:last-child {
+  color: #e7d5b3;
+}
+
+
+/* =================================
+   FIELD NOTE
+================================= */
+
+.hero__journal {
+  position: absolute;
+
+  left: 0.5%;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(-90deg);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  letter-spacing: 0.3em;
+
+  color: #91471f;
+}
+
+
+.hero__journal span {
+  font-size: 8px;
+}
+
+
+.hero__journal strong {
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =================================
+   RIGHT JOURNAL LABEL
+================================= */
+
+.hero__side-label {
+  position: absolute;
+
+  z-index: 10;
+
+  right: 0;
+  top: 63%;
+
+  width: 105px;
+
+  padding: 30px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 13px;
+
+  background: rgba(
+    36,
+    35,
+    29,
+    0.88
+  );
+
+  color: #d8c39e;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.25em;
+
+  text-align: center;
+}
+
+
+.hero__side-label span {
+  color: #91471f;
+
+  font-size: 12px;
+}
+
+
+.hero__side-label small {
+  margin-top: 5px;
+
+  font-size: 8px;
+
+  letter-spacing: 0.35em;
+
+  color: rgba(
+    216,
+    195,
+    158,
+    0.6
+  );
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.hero__footer {
+  position: absolute;
+
+  z-index: 10;
+
+  bottom: 0;
+
+  left: 0;
+  right: 0;
+
+  padding: 18px 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-top: 1px solid
+    rgba(41, 37, 30, 0.5);
+
+  background: rgba(
+    36,
+    35,
+    29,
+    0.88
+  );
+
+  color: #d8c39e;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 0.25em;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .hero__content {
+    left: 7%;
+
+    width: 70%;
+  }
+
+  .hero__title span {
+    font-size: 13vw;
+  }
+
+  .hero__title em {
+    font-size: 9vw;
+  }
+
+  .hero__description {
+    font-size: 15px;
+  }
+
+  .hero__side-label {
+    display: none;
+  }
+
+  .hero__coordinates {
+    left: auto;
+    right: 12%;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .hero__texture {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(231, 213, 179, 0.95),
+        rgba(231, 213, 179, 0.45)
+      );
+  }
+
+  .hero__content {
+    left: 25px;
+
+    width: calc(100% - 50px);
+
+    transform: translateY(-40%);
+  }
+
+  .hero__eyebrow {
+    margin-bottom: 25px;
+
+    font-size: 7px;
+  }
+
+  .hero__title span {
+    font-size: 18vw;
+  }
+
+  .hero__title em {
+    margin-top: 12px;
+
+    font-size: 12vw;
+  }
+
+  .hero__description {
+    margin-top: 30px;
+
+    font-size: 13px;
+  }
+
+  .hero__question {
+    font-size: 17px;
+  }
+
+  .hero__button {
+    margin-top: 25px;
+
+    padding: 14px 20px;
+
+    font-size: 8px;
+  }
+
+  .hero__coordinates,
+  .hero__journal {
+    display: none;
+  }
+
+  .hero__footer {
+    padding: 14px 20px;
+  }
+
+  .hero__footer span:first-child {
+    display: none;
+  }
+
+  .hero__footer span:last-child {
+    width: 100%;
+
+    text-align: center;
+  }
+}

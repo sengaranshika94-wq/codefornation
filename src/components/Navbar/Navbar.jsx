@@ -21,12 +21,7 @@ function Navbar() {
           EXPLORE
         </Link>
 
-        <Link
-          to="/discover"
-          className="navbar__link"
-        >
-          DISCOVER
-        </Link>
+        
 
         <Link
           to="/journal"

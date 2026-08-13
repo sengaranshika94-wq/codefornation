@@ -1,4 +1,4 @@
-import "./DiscoveryCard.scss";
+import "./Discoverycard.scss";
 
 function DiscoveryCard({ story, position, onOpen }) {
   if (!story || !position) return null;

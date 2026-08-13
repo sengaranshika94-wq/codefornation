@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-
 import Home from "./pages/Home.jsx";
 import Explore from "./pages/Explore.jsx";
 import Journal from "./pages/Journal.jsx";
-import MiniGame from "./pages/MiniGame.jsx";
+
 
 function App() {
   return (
@@ -25,10 +24,6 @@ function App() {
           element={<Journal />}
         />
 
-        <Route
-          path="/minigame"
-          element={<MiniGame/>}
-        />
 
       </Routes>
     </BrowserRouter>

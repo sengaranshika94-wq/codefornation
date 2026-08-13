@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 import Home from "./pages/Home.jsx";
 import Explore from "./pages/Explore.jsx";
-import Discover from "./pages/Discovery.jsx";
 import Journal from "./pages/Journal.jsx";
 import MiniGame from "./pages/MiniGame.jsx";
 
@@ -19,11 +18,6 @@ function App() {
         <Route
           path="/explore"
           element={<Explore />}
-        />
-
-        <Route
-          path="/discover"
-          element={<Discover />}
         />
 
         <Route

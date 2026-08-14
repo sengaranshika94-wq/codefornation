@@ -1,8 +1,17 @@
 import { useState } from "react";
+
 import indiaMap from "../../assets/images/india_map.svg";
+import DiscoveryCard from "../DiscoverY_card/DiscoveryCard.jsx";
+
 import "./IndiaMap.scss";
 
-function IndiaMap({ stories = [], onStorySelect }) {
+function IndiaMap({
+  stories = [],
+  selectedStory = null,
+  detailStory = null,
+  onStorySelect,
+  onOpenDetail,
+}) {
   const [activeStory, setActiveStory] = useState(null);
 
   const handlePinClick = (event, story) => {
@@ -48,9 +57,7 @@ function IndiaMap({ stories = [], onStorySelect }) {
                   left: `${story.coordinates.x}%`,
                   top: `${story.coordinates.y}%`,
                 }}
-                onClick={(event) =>
-                  handlePinClick(event, story)
-                }
+                onClick={(event) => handlePinClick(event, story)}
                 aria-label={`Explore ${story.title}`}
                 aria-pressed={isActive}
               >
@@ -61,6 +68,14 @@ function IndiaMap({ stories = [], onStorySelect }) {
             );
           })}
         </div>
+
+        {selectedStory && !detailStory && (
+          <DiscoveryCard
+            story={selectedStory}
+            position={selectedStory.coordinates}
+            onOpen={onOpenDetail}
+          />
+        )}
       </div>
 
       <div className="india-map__caption">

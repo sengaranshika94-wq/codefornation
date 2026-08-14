@@ -178,6 +178,18 @@
   align-items: center;
 }
 
+/* Keep the map and card in the same coordinate system */
+.explore__map > .discovery-card {
+  position: absolute;
+
+  z-index: 50;
+
+  /*
+   * IndiaMap canvas is 78vw / max 760px wide.
+   * The map itself is centered inside explore__map.
+   */
+}
+
 
 /* =================================
    SOFT LIGHT BEHIND MAP
